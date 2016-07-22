@@ -15,14 +15,14 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: localhost
-  username: pguser
-  password: pguser
+  username: root
+  password: user
 
 development:
   <<: *default
@@ -83,6 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: WebMess_production
-  username: WebMess
-  password: <%= ENV['WEBMESS_DATABASE_PASSWORD'] %>
+  database: heroku_0f106816ef8c16b
+  username: be430195249ce7
+  password: ca7215a3
+  host: mysql://be430195249ce7:ca7215a3@us-cdbr-iron-east-04.cleardb.net/heroku_0f106816ef8c16b?reconnect=true
