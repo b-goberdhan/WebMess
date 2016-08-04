@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 			flash[:color] = "valid"
 			redirect_to(:action => 'home')
 		else
-			flash[:notice] = "Form is Invalid"
 			flash[:color] = "invalid"
 			render ('new')
 		end
@@ -20,6 +19,6 @@ class UsersController < ApplicationController
 
 	private 
 	def user_params
-    	params.require(:user).permit(:username, :faculty, :major, :email, :password)
+    	params.require(:user).permit(:username, :faculty, :major, :email, :password, :password_confirmation)
   	end
 end
