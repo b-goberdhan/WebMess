@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
+	has_secure_password
 
-	attr_accessor :password,:password_confirmation
+	#attr_accessor :password,:password_confirmation
 	EMAIL_REGEX = /\A[A-Z0-9._%+-]+@ucalgary+\.ca\z/i
 	
 	validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
