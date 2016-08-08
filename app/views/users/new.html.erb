@@ -1,0 +1,48 @@
+<% @page_title = "Sign Up" %>
+<%= link_to("<< Back to Home", {:action => 'home'}, :class => 'back-link') %>
+<div class="users new">
+  <h2>Sign Up</h2>
+    <%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+
+    <table summary="Users form fields">
+      <tr>
+        <th>Username (at least 3 characters)</th>
+        <td><%= f.text_field(:username) %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><%= f.password_field(:password) %></td>
+      </tr>
+      <tr>
+        <th>Confirm Password</th>
+        <td><%= f.password_field(:password_confirmation) %></td>
+      </tr>
+      <tr>
+        <th>Faculty</th>
+        <td><%= f.text_field(:faculty) %></td>
+      </tr>
+      <tr>
+        <th>Major</th>
+        <td><%= f.text_field(:major) %></td>
+      </tr>
+
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Sign Up") %>
+    </div>
+
+  <% end %>
+
+  <% if @user.errors.any? %>
+    <ul class="Signup_Errors">
+    <% for message_error in @user.errors.full_messages %>
+      <li> <%= message_error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>

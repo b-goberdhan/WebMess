@@ -1,0 +1,10 @@
+<% if !flash[:notice].blank? %>
+	<div class = "notice">
+		<%= flash[:notice] %>
+	</div>
+<%end%>
+
+<%= link_to("Sign Up", {:action => 'new'}, :class => 'action new') %>
+</br>
+<%= link_to("Login", {:controller => "Sessions",:action => 'login'}, :class => 'action login') %>
+</br>

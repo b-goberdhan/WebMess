@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/login'
+
+  root 'users#home'
+  match ':controller(/:action(/:id))', :via => [:get,:post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
