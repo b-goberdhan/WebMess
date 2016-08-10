@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
 	validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
 	validates :faculty, :presence => true
 	validates :major, :presence => true
-  	validates :email, :presence => true, :uniqueness => true , :format => EMAIL_REGEX
+  	#validates :email, :presence => true, :uniqueness => true , :format => EMAIL_REGEX
   	validates :password, :confirmation => true   #password_confirmation attr
   	validates :password_confirmation, :presence => true
+
 =begin
 def self.authenticate(username_email = "", login_password = "")
 	if EMAIL_REGEX.match(username_email)
