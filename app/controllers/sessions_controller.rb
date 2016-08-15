@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       session[:user_id]= authorized_user.id
       session[:username]= authorized_user.username
       flash[:notice] = "You are now logged in."
-      redirect_to(:action => 'home')
+      redirect_to(:controller => 'Main',:action => 'home')
     else
       flash[:notice] = "Invalid username/password combination."
       redirect_to(:action => 'login')
