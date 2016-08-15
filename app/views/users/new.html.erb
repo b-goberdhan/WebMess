@@ -1,5 +1,5 @@
 <% @page_title = "Sign Up" %>
-<%= link_to("<< Back to Home", {:action => 'home'}, :class => 'back-link') %>
+<%= link_to("<< Back to Home", {:controller => "Main",:action => 'home'}, :class => 'back-link') %>
 <div class="users new">
   <h2>Sign Up</h2>
     <%= form_for(:user, :url => {:action => 'create'}) do |f| %>

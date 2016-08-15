@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 		if @user.save
 			flash[:notice] = "Sign Up Successful"
 			flash[:color] = "valid"
-			redirect_to(:action => 'home')
+			redirect_to(:controller => "Main",:action => 'home')
 		else
 			flash[:color] = "invalid"
 			render ('new')

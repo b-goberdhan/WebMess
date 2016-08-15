@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160804233421) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        limit: 25
+    t.string   "username",        limit: 255
     t.string   "faculty",         limit: 50
     t.string   "major",           limit: 50
     t.string   "email",           limit: 255, default: "", null: false
