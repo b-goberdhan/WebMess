@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'course_search/index'
+  get 'course_search/update_courses', as: 'update_courses'
+  get 'welcome/show'
 
   get 'main/home'
 
