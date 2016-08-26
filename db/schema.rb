@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821205900) do
+ActiveRecord::Schema.define(version: 20160826193541) do
 
   create_table "courses", force: :cascade do |t|
     t.integer  "course_number", limit: 4
@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 20160821205900) do
     t.string   "attachment", limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "course_id",  limit: 4
   end
+
+  add_index "resources", ["course_id"], name: "index_resources_on_course_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -47,4 +50,5 @@ ActiveRecord::Schema.define(version: 20160821205900) do
   end
 
   add_foreign_key "courses", "subjects"
+  add_foreign_key "resources", "courses"
 end

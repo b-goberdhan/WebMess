@@ -1,5 +1,8 @@
 class ResourcesController < ApplicationController
     def index
+      @course = Course.where(params[:course_id])
+
+      #where(<columnname> => <columnvalue>)
       @resources = Resource.all
    end
    

@@ -1,6 +1,8 @@
 <!-- app/views/welcome/index.html.erb -->
   
-<%= form_for :trip, url: {action: "show"}, html: {method: "get"} do |f| %>
+<link href="main.css" rel="app/stylesheets" type="text/scss"/>﻿
+
+<%= form_for :trip, url: {action: "show"}, html: {method: "post"} do |f| %>
   <%= f.select :subject_id, options_for_select(@subjects.collect { |subject|
     [subject.name.titleize, subject.id] }, 1), {}, { id: 'subjects_select' } %>
   <%= f.select :course_id, options_for_select(@courses.collect { |course|
