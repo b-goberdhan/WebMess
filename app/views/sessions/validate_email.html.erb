@@ -1,0 +1,16 @@
+
+<div class="validateEmail">
+  <%= form_tag(:action => 'validate_email') do %>
+  <table>
+    <tr>
+      <td><%= label_tag('Verification Code') %></td>
+      <td><%= text_field_tag(:code) %></td>
+      
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Validate Email") %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>

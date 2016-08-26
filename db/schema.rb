@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810070436) do
+ActiveRecord::Schema.define(version: 20160821203857) do
 
   create_table "redirects", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160810070436) do
     t.datetime "updated_at",                                null: false
     t.string   "password_digest",  limit: 255
     t.string   "email_validation", limit: 255
+    t.boolean  "email_checked"
   end
 
 end
