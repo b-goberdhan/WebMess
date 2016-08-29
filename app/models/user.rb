@@ -9,7 +9,11 @@ class User < ActiveRecord::Base
 	validates :major, :presence => true
   	validates :email, :presence => true, :uniqueness => true , :format => EMAIL_REGEX
   	validates :password, :confirmation => true   #password_confirmation attr
-  	validates :password_confirmation, :presence => true
+  	validates :password_confirmation, :presence => true, :if => Proc.new { |user| user.new_record? }
+
+
+
+
 =begin
 def self.authenticate(username_email = "", login_password = "")
 	if EMAIL_REGEX.match(username_email)

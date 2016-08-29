@@ -7,10 +7,13 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
+		
+		
 		if @user.save
 			flash[:notice] = "Sign Up Successful"
 			flash[:color] = "valid"
-			redirect_to(:controller => "Main",:action => 'home')
+			VerifyEmail.send_verification(@user).deliver_now
+			redirect_to(:action => 'home')
 		else
 			flash[:color] = "invalid"
 			render ('new')

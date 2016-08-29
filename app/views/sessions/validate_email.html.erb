@@ -1,18 +1,15 @@
-<%= link_to("<< Back to Home", {:controller => "Users",:action => 'home'}, :class => 'back-link') %>
 
-<% @page_title = "Please validate your email!" %>
-
-<div class= "login">
-   <%= form_for(:sessions, :url => {:action => 'validate_email'}) do |f| %>
-    <table summary="Users form fields">
+<div class="validateEmail">
+  <%= form_tag(:action => 'validate_email') do %>
+  <table>
     <tr>
-      <td> <%= label_tag("Enter Code") %></td>
-      <td> <%= f.text_field(:code)%></td>
+      <td><%= label_tag('Verification Code') %></td>
+      <td><%= text_field_tag(:code) %></td>
+      
     </tr>
-
     <tr>
       <td>&nbsp;</td>
-      <td><%= submit_tag("Verify") %></td>
+      <td><%= submit_tag("Validate Email") %></td>
     </tr>
   </table>
   <% end %>
