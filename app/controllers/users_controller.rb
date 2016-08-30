@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 			flash[:notice] = "Sign Up Successful"
 			flash[:color] = "valid"
 			VerifyEmail.send_verification(@user).deliver_now
-			redirect_to(:action => 'home')
+			redirect_to(:controller =>'Sessions' , :action => 'login')
 		else
 			flash[:color] = "invalid"
 			render ('new')

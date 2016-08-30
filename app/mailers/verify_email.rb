@@ -3,7 +3,7 @@ class VerifyEmail < ApplicationMailer
 	#for development
 	#default from: "webmess.dev@gmail.com"
 
-	#for profuction
+	#for production
 	default from: "verificationdonotreply@app4b048edc22f24a2e8f5429e525021387.mailgun.org"
 
 

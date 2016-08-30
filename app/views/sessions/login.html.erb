@@ -1,5 +1,9 @@
 <%= link_to("<< Back to Home", {:controller => "Main",:action => 'home'}, :class => 'back-link') %>
-
+<% if !flash[:notice].blank? %>
+  <div class = "">
+    <%= flash[:notice] %>
+  </div>
+<%end%>
 
 <% @page_title = "Login" %>
 
