@@ -4,7 +4,7 @@ class VerifyEmail < ApplicationMailer
 	#default from: "webmess.dev@gmail.com"
 
 	#for production
-	default from: "verificationdonotreply@app4b048edc22f24a2e8f5429e525021387.mailgun.org"
+	default from: "postmaster@webmess.ca"
 
 
 	def send_verification(user)
