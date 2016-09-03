@@ -8,12 +8,31 @@ class VerifyEmail < ApplicationMailer
 
 
 	def send_verification(user)
-		@user = user
-		@email_validation_code = (0...8).map { (65 + rand(26)).chr}.join
-		user.email_validation= @email_validation_code
-		user.save
-		mail(to: @user.email, subject: "Verify Your Account")
+
+		@default_password = (0...8).map { (65 + rand(26)).chr}.join
 		
+		user.password = @default_password
+		user.password_confirmation = @default_password
+		user.email_checked = false
+		user.save!
+		mail(:to => user.email, :subject => "Account Setup")
 	end
+
+	def send_password_forgot(user)
+		
+		@reset_password = (0...8).map { (65 + rand(26)).chr}.join
+		
+		
+		user.password = @reset_password
+		user.password_confirmation = @reset_password
+		user.email_checked = false
+		user.save!
+		mail(:to => user.email, :subject => "Password Reset")
+
+	end
+
+	def send_profile_change(user)
+	end
+
 
 end

@@ -1,9 +1,62 @@
-<h1>To be the main page of a user</h1>
 
-<% if !flash[:notice].blank? %>
-	<div class = "">
-		<%= flash[:notice] %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<header>
+	<div id=fill_container class="container-fluid"></div>
+	<div id="container" class="container-fluid">
+		<div id="row" class="row">
+			<div class="col-xs-2">APP NAME</div>
+			<div class="col-xs-7">NOTHING HERE</div>
+			<div class="col-xs-1">Help</div>
+			<div class="col-xs-2">
+				<div id="profile_dropdown" class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><%=session[:username]%> <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu"> 
+					<li><%=link_to("Sign Out", {:controller => "sessions", :action => 'logout'})%></li>
+				</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-<%end%>
-</br>
-<%= link_to("Logout", {:controller => "Sessions",:action => 'logout'}, :class => 'action logout') %>
+	<div class="container">
+		<div class="row">
+			<div id ="dashboard" class="col-xs-3">
+				<h2>Dashboard</h2>
+				
+				<h3>Notifications</h3>
+				<h3>Uploads</h3>
+				<h3>Bookmarked Resources</h3>
+
+
+			</div>
+			<div id="main_view" class="col-xs-9"><%=text_field_tag(:email)%></div>
+		</div>
+
+
+	</div>
+
+
+
+
+</header>
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+</body>
+</html>
