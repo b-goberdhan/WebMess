@@ -58,7 +58,7 @@ class SessionsController < ApplicationController
 
         redirect_to(:action => 'home')
       end
-        #send email to let user know
+        
        
       
     end
