@@ -49,7 +49,7 @@ class SessionsController < ApplicationController
     user = User.where(:id => session[:user_id]).first
     if params[:password].present? && params[:confirm_password].present?
       
-      if params[:password] != params[:password_confirmation]
+      if params[:password] != params[:confirm_password]
        flash[:notice] = "The passwords you entered don't seem to match."
       
       elsif result = change_password(user.id, params[:password], params[:confirm_password])
