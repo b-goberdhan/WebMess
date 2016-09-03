@@ -1,4 +1,5 @@
-
+<h3>Would you like to change your auto-generated password?</h3>
+<!--
 <div class="validateEmail">
   <%= form_tag(:action => 'validate_email') do %>
   <table>
@@ -10,7 +11,66 @@
     <tr>
       <td>&nbsp;</td>
       <td><%= submit_tag("Validate Email") %></td>
+
     </tr>
   </table>
   <% end %>
 </div>
+-->
+
+
+ <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#new_password">Change Password</button>
+
+ <div id="new_password" class="collapse">
+
+
+  <div>
+    <%= form_tag(:action => 'validate_email') do %>
+    <table>
+
+
+
+     <br>
+      <td>&nbsp;<%= label_tag(:password)%></td>
+      <td>&nbsp;<%= password_field_tag(:password)%></td>
+
+
+
+      <td>&nbsp;<%= label_tag(:confirm_password)%></td>
+      <td>&nbsp;<%= password_field_tag(:confirm_password)%></td>
+
+
+      <td>&nbsp;<%= submit_tag("OK", :class => 'btn btn-sm btn-warning')%></td>
+    
+     <br>
+    
+
+    </table>
+    <%end%>
+    <br>
+    <% if !flash[:notice].blank?%>
+      <div class="alert alert-danger">
+       <strong>Opps! </strong><%= flash[:notice] %>
+      </div> 
+     <% end %>
+
+    </div>
+  </div>
+
+
+<br><br><%= button_to("I'll Change It Later", {:controller => 'sessions', :action => 'home'}, :class => 'btn btn-md btn-primary')%>&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
