@@ -3,28 +3,36 @@
 		<%= flash[:notice] %>
 	</div>
 <%end%>
-<h1>Home Page</h1>
 
- 
-<%= link_to("Sign Up", {:controller => "Users",:action => 'new'}, :class => 'action new') %>
-</br>
-<%= link_to("Login", {:controller => "Sessions",:action => 'login'}, :class => 'action login') %>
-</br>
-<%= link_to("Logout", {:controller => "Sessions",:action => 'logout'}, :class => 'action logout') %>
-<br />
-
-
-<br />
-<h2>Links</h2>
-
-
-<%= link_to "Desire to Learn", "https://d2l.ucalgary.ca/login.asp" "\n"%>
-<br />
-<%= link_to "My University of Calgary", "https://www.ucalgary.ca/" %>
-<br />
-
-
-<%= link_to "Campus Map", "http://ucmaps.ucalgary.ca/PublicFiles/CurrentMaps/CampusMap_MainCampus_Letter.pdf" %>
-
+<div id="container">
+  <img src="/images/mainbackground.jpg" id="background-home">
+	 <div class="col-xs-6">
+		<p id="text-1">
+		How to get your SHIT together
+		</p>
+  </div>
+ 	
+    <div class="col-xs-6">
+	     <%= form_for(:user, :url => {:controller => 'Users', :action => 'new'}) do |f| %>
+		  <table summary="Users form fields" id="user-input">
+        <tr>
+        	<th id="user-form">Username &nbsp; &nbsp; </th>
+        	<td><%= f.text_field(:username)%></td>
+      	</tr>
+          <br>
+      	<tr>
+        	<th id="user-form">Email</th>
+        	<td><%= f.text_field(:email) %></td>
+      	</tr>
+          <br>
+      	<tr>
+        	<th id="user-form">Password</th>
+        	<td><%= f.password_field(:password) %></td>
+      	</tr>
+	   </table>
+    <button class= "button" type="submit" value="Submit">SIGN UP!</button>
+  	<%end%>
+	</div>
+</div>
 
 
