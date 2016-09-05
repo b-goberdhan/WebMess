@@ -7,7 +7,60 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= yield %>
+<div class="container">
+      <div class="row">
+        <div class="col-xs-1">
+            <h1>U•PUTA</h1></div>
+        <div class="col-xs-10"></div>
+        <div class="col-xs-1">
+          <div class="dropdown">
+            <button id= dropdown-button class="btn btn primary dropdown-toggle" type="button" data-toggle="dropdown"> <img src = "/icons/dropdown.ico"></img></button>    
+            <ul class="dropdown-menu">
+              <li><%= link_to("Login", {:controller => "Sessions",:action => 'login'}, :class => 'action login') %></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="container-responsive">
+    <div class="row">
+      <div align = "center" class="col-xs-12">
+      <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id= "container-2">
+    <div class="row">
+      <div class="col-xs-12">
+      <p id="text">
+      <br>
+        You are a piece of shit, right?
+      </p>
+        <h2>- Anonymous</h2>
+        <br>
+      </div>
+    </div>
+  </div>
+
+    <div class="container" id= "container-3">
+      <div class="row">
+      
+          <div class="col-xs-4" align="center">
+          <%= link_to "Desire to Learn", "https://d2l.ucalgary.ca/login.asp" "\n"%>
+          </div>
+      
+          <div class="col-xs-4" align="center">
+          <%= link_to "University of Calgary", "https://www.ucalgary.ca/" %>
+          </div>
+
+          <div class="col-xs-4" align="center">
+          <%= link_to "Campus Map", "http://ucmaps.ucalgary.ca/PublicFiles/CurrentMaps/CampusMap_MainCampus_Letter.pdf" %>
+          </div>
+      </div>
+      <br>
+    </div>
 
 </body>
 </html>
