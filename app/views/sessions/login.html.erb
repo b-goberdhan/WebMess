@@ -1,9 +1,3 @@
-<%= link_to("<< Back to Home", {:controller => "Main",:action => 'home'}, :class => 'back-link') %>
-<% if !flash[:notice].blank? %>
-  <div class = "">
-    <%= flash[:notice] %>
-  </div>
-<%end%>
 
 <% @page_title = "Login" %>
 
@@ -26,3 +20,14 @@
   </table>
   <% end %>
 </div>
+
+<forgotpass>
+  <%= link_to("Forgot Password?", {:controller => 'Sessions', :action => 'forgot_password'}) %>
+</forgotpass>
+
+<br>
+<% if !flash[:notice].blank?%>
+ <div class="alert alert-success">
+  <strong>Look at that! </strong><%= flash[:notice] %>
+ </div> 
+<% end %>
