@@ -1,25 +1,22 @@
 class ResourcesController < ApplicationController
     def index
-      @course = Course.where(params[:course_id])
-
       #where(<columnname> => <columnvalue>)
       @resources = Resource.all
+      @resources = @resources.course_id(params[:course_id]) if params[:course_id].present?
    end
    
    def new
       @resource = Resource.new
-      #redirect_to(url_for(subject_course_resources_path(@resources)))
-
-      redirect_to(url_for(subject_course_resources_path(@resource)))
-   end
    
    def create
+      @course = Course.find(1)
       @resource = Resource.new(resource_params)
+      @resource.course_id = params[:course_id]
       
       if @resource.save
          
 
-         redirect_to resources_path, notice: "The Resource #{@resource.name} has been uploaded."
+         redirect_to subject_course_resources_path, notice: "The Resource #{@resource.name} has been uploaded."
       else
          render "new"
       end
@@ -29,7 +26,7 @@ class ResourcesController < ApplicationController
    def destroy
       @resource = Resource.find(params[:id])
       @resource.destroy
-      redirect_to resources_path, notice:  "The Resource #{@resource.name} has been deleted."
+      redirect_to subject_course_resources_path, notice:  "The Resource #{@resource.name} has been deleted."
    end
    
    private

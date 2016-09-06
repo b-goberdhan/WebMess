@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'sessions/login'
   resources :subjects do
     resources :courses do
-       resources :resources, only: [:index, :new, :create, :destroy]
+       resources :resources
     end
   end
 
