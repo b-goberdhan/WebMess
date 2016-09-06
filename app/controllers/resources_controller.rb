@@ -7,7 +7,7 @@ class ResourcesController < ApplicationController
    
    def new
       @resource = Resource.new
-   
+   end
    def create
       @course = Course.find(1)
       @resource = Resource.new(resource_params)

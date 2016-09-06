@@ -6,4 +6,5 @@ class Resource < ActiveRecord::Base
  	validates :attachment, presence: true
  	belongs_to :course
  	scope :course_id, -> (course_id) {where course_id: course_id}
+ 	
 end

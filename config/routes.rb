@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'welcome/show'
 
   get 'main/home'
+  
 
   get 'sessions/login'
   resources :subjects do
