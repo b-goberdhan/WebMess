@@ -95,6 +95,10 @@ class SessionsController < ApplicationController
 
   public
   def home
+    if session[:user_id] == nil || session[:username] == nil
+      redirect_to(:action => 'login')
+    end
+
   	#Home Page
   end
 end
