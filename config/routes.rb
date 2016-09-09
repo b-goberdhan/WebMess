@@ -1,7 +1,27 @@
 Rails.application.routes.draw do
+  #get 'resources/index'
+  #get 'resources/new'
+  #get 'resources/create'
+  #get 'resources/destroy'
+  
+  get 'course_search/index'
+  get 'course_search/update_courses', as: 'update_courses'
+  get 'welcome/show'
+
   get 'main/home'
+  
 
   get 'sessions/login'
+  resources :subjects do
+    resources :courses do
+       resources :resources
+    end
+  end
+
+#  CarrierWaveExample::Application.routes.draw do
+   #resources :resources, only: [:index, :new, :create, :destroy]
+  # root "resumes#index"
+ # end
 
   root 'main#home'
   match ':controller(/:action(/:id))', :via => [:get,:post]

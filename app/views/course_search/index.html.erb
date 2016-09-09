@@ -1,0 +1,11 @@
+<!-- app/views/welcome/index.html.erb -->
+  
+<link href="main.css" rel="app/stylesheets" type="text/scss"/>﻿
+
+<%= form_for :trip, url: {action: "show"}, html: {method: "post"} do |f| %>
+  <%= f.select :subject_id, options_for_select(@subjects.collect { |subject|
+    [subject.name.titleize, subject.id] }, 1), {}, { id: 'subjects_select' } %>
+  <%= f.select :course_id, options_for_select(@courses.collect { |course|
+    [course.course_number, course.id] }, 0), {}, { id: 'courses_select' } %>
+  <%= f.submit "Go!" %>
+<% end %>

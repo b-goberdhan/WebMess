@@ -1,0 +1,38 @@
+
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+<h><b>Course Resources</b></h> 
+
+</br>
+</br>
+<%= link_to "New Resource", new_subject_course_resource_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+
+
+
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Download Link</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @resources.each do |resource| %>
+         <tr>
+            <td><%= resource.name %></td>
+            <td><%= link_to "Download resource", resource.attachment_url %></td>
+              
+         </tr>
+      <% end %>
+   </tbody>
+   
+</table>
