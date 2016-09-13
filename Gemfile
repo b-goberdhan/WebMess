@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-
 gem 'figaro'
+
 gem 'tzinfo-data'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
  gem 'bcrypt', '~> 3.1.7'
 
  gem 'carrierwave'
+ gem 'fog', '~> 1.38.0'
+
 
  
 # Use Unicorn as the app server

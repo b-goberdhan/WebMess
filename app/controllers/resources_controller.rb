@@ -9,7 +9,6 @@ class ResourcesController < ApplicationController
       @resource = Resource.new
    end
    def create
-      @course = Course.find(1)
       @resource = Resource.new(resource_params)
       @resource.course_id = params[:course_id]
       
